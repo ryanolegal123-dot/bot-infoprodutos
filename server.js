@@ -1,8 +1,8 @@
 import http from 'node:http';
 import { setTimeout as sleep } from 'node:timers/promises';
-import { createApis } from './src/api.js';
-import { createBot } from './src/bot.js';
-import { verifySignature } from './src/security.js';
+import { createApis } from './scr/api.js';
+import { createBot } from './scr/bot.js';
+import { verifySignature } from './scr/security.js';
 
 const required=['TELEGRAM_BOT_TOKEN','MERCADOPAGO_ACCESS_TOKEN','MERCADOPAGO_WEBHOOK_SECRET','SUPABASE_URL','SUPABASE_SERVICE_ROLE_KEY','ADMIN_TELEGRAM_ID','PUBLIC_BASE_URL'];
 for(const name of required) if(!process.env[name]) { console.error(`Configure ${name}`); process.exit(1); }
